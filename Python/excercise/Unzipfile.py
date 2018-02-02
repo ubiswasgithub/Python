@@ -9,6 +9,9 @@ import os, fnmatch
 
 class UnzipFile:
     
+   
+    # Function to unzip files.................#
+    
     def getUnZipfile(self, filepath, destination):
         listOfFiles = os.listdir(filepath)
         pattern = "*.zip"
@@ -30,6 +33,9 @@ class UnzipFile:
         zip_ref.close()
         print "All Zips are extracted successfully to "+ destination
         
+     
+    # Funtion to generate combined CSV file ................#   
+    
     def getCombinedCsvFile(self,destination):        
         listoffiles = os.listdir(destination)
         fout = open(destination+"\\"+"combined.csv", 'a')
@@ -40,7 +46,9 @@ class UnzipFile:
         print "Combined multiple CSV files to one"
         
         
-    def getRenameZipFile(self, source):
+    # Function to rename Zip files......................#
+        
+    def getRenameZipFile(self,source):
         print source
         listOfFiles = os.listdir(source)
         pattern = "*.zip"

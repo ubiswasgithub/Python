@@ -3,8 +3,7 @@ Created on Jan 17, 2018
 
 @author: ubiswas
 '''
-import Engineering
-import Humanresource
+import os
 import Unzipfile
 
 class Main:
@@ -12,22 +11,17 @@ class Main:
         print "Hello"
         
 
-
-objEng = Engineering.Engineering("TEst1", "Ar1", 1200)
-objEng.greetingResource()
-objEng.displayResourceAddress();
-objEng.displayAnualIincrementedSalary()
-
-objHr = Humanresource.Humanresource("HR1", "Ar1", 1200)
-objHr.greetingResource()
-objHr.displayResourceAddress()
-objHr.displayAnualIincrementedSalary()
+fileDir = os.path.dirname(os.path.realpath('__file__'))
+fileDir =  os.path.abspath(os.path.join(fileDir, os.pardir))
 
 
 objZip = Unzipfile.UnzipFile()
-objZip.getRenameZipFile("E:\\Personal\\courseera\\workspace\\Python\\Scorm")
-objZip.getUnZipfile("E:\\Personal\\courseera\\workspace\\Python\\Scorm", "E:\\Personal\\courseera\\workspace\\Python\\unzip")
-objZip.getCombinedCsvFile("E:\\Personal\\courseera\\workspace\\Python\\unzip")
+#objZip.getRenameZipFile("E:\\Personal\\courseera\\workspace\\Python\\Scorm")
+objZip.getRenameZipFile(fileDir + "\\Scorm")
+#objZip.getUnZipfile("E:\\Personal\\courseera\\workspace\\Python\\Scorm", "E:\\Personal\\courseera\\workspace\\Python\\unzip")
+objZip.getUnZipfile(fileDir + "\\Scorm", fileDir+ "\\unzip")
+#objZip.getCombinedCsvFile("E:\\Personal\\courseera\\workspace\\Python\\unzip")
+objZip.getCombinedCsvFile(fileDir+ "\\unzip")
 
 
 
